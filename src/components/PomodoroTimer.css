@@ -1,0 +1,72 @@
+.pomodoro-timer {
+  position: relative;
+  margin: 12px;
+  margin-top: auto;
+  background: linear-gradient(135deg, #DBEAFE 0%, #EFF6FF 100%);
+  border-radius: 8px;
+  padding: 10px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.pomodoro-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(59, 130, 246, 0.15) 0%, rgba(59, 130, 246, 0.08) 100%);
+  border-radius: 8px;
+  pointer-events: none;
+  transition: width 1s linear;
+  z-index: 0;
+}
+
+.pomodoro-time {
+  position: relative;
+  z-index: 1;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.5px;
+  min-width: 50px;
+}
+
+.pomodoro-buttons {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.pomodoro-play-btn,
+.pomodoro-reset-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--color-primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.pomodoro-play-btn:hover,
+.pomodoro-reset-btn:hover {
+  background-color: #2563eb;
+  transform: scale(1.08);
+}
+
+.pomodoro-play-btn:active,
+.pomodoro-reset-btn:active {
+  transform: scale(0.92);
+}

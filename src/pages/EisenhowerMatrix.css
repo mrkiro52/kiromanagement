@@ -1,0 +1,291 @@
+
+.eisenhower-page {
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-bg-main);
+}
+
+.eisenhower-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: var(--color-bg-main);
+}
+
+.eisenhower-header h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.btn-priority {
+  padding: 0 16px;
+  height: 36px;
+  background-color: transparent;
+  border: 2px solid var(--color-border);
+  color: var(--color-text-secondary);
+  border-radius: 18px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.btn-priority:hover {
+  border-color: var(--color-danger);
+  color: var(--color-danger);
+}
+
+.btn-priority.active {
+  background-color: var(--color-danger);
+  color: white;
+  border-color: var(--color-danger);
+}
+
+.eisenhower-tasks-selector {
+  padding: 16px 20px;
+  background-color: var(--color-bg-main);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.eisenhower-tasks-selector h3 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  margin: 0 0 12px 0;
+}
+
+.tasks-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.task-pill {
+  padding: 4px 10px;
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  font-size: 13px;
+  color: var(--color-text-primary);
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.task-pill:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.task-pill.selected {
+  background-color: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+}
+
+.no-tasks {
+  font-size: 14px;
+  color: var(--color-text-placeholder);
+  margin: 0;
+}
+
+.eisenhower-matrix {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  flex: 1;
+  overflow: hidden;
+  padding: 24px;
+}
+
+.matrix-row {
+  display: contents;
+}
+
+.matrix-zone {
+  background: white;
+  padding: 20px;
+  border: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  position: relative;
+  border-radius: 16px;
+}
+
+.matrix-zone.red {
+  background: linear-gradient(135deg, rgba(255, 229, 229, 0.1), rgba(255, 209, 209, 0.1));
+  border-color: rgba(239, 68, 68, 0.2);
+}
+
+.matrix-zone.yellow {
+  background: linear-gradient(135deg, rgba(255, 244, 229, 0.1), rgba(255, 232, 204, 0.1));
+  border-color: rgba(245, 158, 11, 0.2);
+}
+
+.matrix-zone.blue {
+  background: linear-gradient(135deg, rgba(224, 231, 255, 0.1), rgba(199, 210, 254, 0.1));
+  border-color: rgba(59, 130, 246, 0.2);
+}
+
+.matrix-zone.green {
+  background: linear-gradient(135deg, rgba(229, 249, 240, 0.1), rgba(209, 242, 230, 0.1));
+  border-color: rgba(16, 185, 129, 0.2);
+}
+
+.matrix-zone-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0 0 16px 0;
+  position: sticky;
+  top: 0;
+  background: transparent;
+  padding-bottom: 8px;
+}
+
+.matrix-zone-tasks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-content: flex-start;
+  position: relative;
+}
+
+.matrix-task-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 6px 12px;
+  background: white;
+  border: 2px solid rgba(0, 0, 0, 0);
+  border-radius: 20px;
+  cursor: default;
+  transition: border-color 0.2s;
+  white-space: nowrap;
+  font-size: 0;
+  max-width: max-content;
+}
+
+.matrix-task-item:hover {
+  border-color: rgba(0, 0, 0, 0);
+}
+
+.matrix-task-item.priority {
+  border-color: var(--color-danger);
+  border-width: 2px;
+  box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.1);
+}
+
+/* Фоны для плашек задач по типам зон */
+.matrix-task-item-red {
+  background: linear-gradient(135deg, rgba(255, 229, 229, 0.5), rgba(255, 209, 209, 0.5));
+}
+
+.matrix-task-item-yellow {
+  background: linear-gradient(135deg, rgba(255, 244, 229, 0.5), rgba(255, 232, 204, 0.5));
+}
+
+.matrix-task-item-blue {
+  background: linear-gradient(135deg, rgba(224, 231, 255, 0.5), rgba(199, 210, 254, 0.5));
+}
+
+.matrix-task-item-green {
+  background: linear-gradient(135deg, rgba(229, 249, 240, 0.5), rgba(209, 242, 230, 0.5));
+}
+
+.matrix-task-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  word-break: break-word;
+}
+
+.matrix-task-remove {
+  width: 16px;
+  height: 16px;
+  border: none;
+  background: transparent;
+  color: var(--color-text-placeholder);
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.matrix-task-remove:hover {
+  color: var(--color-danger);
+}
+
+.matrix-add-zone-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid rgba(59, 130, 246, 0.3);
+  background: rgba(59, 130, 246, 0.1);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  z-index: 10;
+}
+
+.matrix-add-zone-btn:hover {
+  background: rgba(59, 130, 246, 0.2);
+  border-color: var(--color-primary);
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+@media (max-width: 1024px) {
+  .eisenhower-matrix {
+    grid-template-columns: 1fr;
+  }
+
+  .matrix-zone {
+    height: 50vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .eisenhower-header {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 14px 16px;
+  }
+
+  .eisenhower-header h2 {
+    font-size: 20px;
+    width: 100%;
+  }
+
+  .eisenhower-tasks-selector {
+    padding: 12px 16px;
+  }
+
+  .eisenhower-matrix {
+    padding: 12px;
+    gap: 12px;
+    overflow-y: auto;
+  }
+
+  .matrix-zone {
+    height: auto;
+    min-height: 180px;
+  }
+}

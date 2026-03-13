@@ -1,67 +1,27 @@
-import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
-import './App.css'
-
-// Импорт компонентов
-import Layout from './components/Layout'
-import ProtectedRoute from './components/ProtectedRoute'
-
-// Импорт страниц
-import Login from './pages/Login'
-import KnowledgeBase from './pages/KnowledgeBase'
-import Profile from './pages/Profile'
-import Posts from './pages/Posts'
-import Events from './pages/Events'
-import Dashboard from './pages/Dashboard'
-import Desktop from './pages/Desktop'
-
-// Импорт админ компонентов
-import AdminLogin from './pages/AdminLogin'
-import AdminPanel from './pages/AdminPanel'
-import Landing from './pages/Landing'
+import { Routes, Route } from 'react-router-dom';
+import './App.css';
+import Sidebar from './components/Sidebar';
+import Tasks from './pages/Tasks';
+import English from './pages/English';
+import EisenhowerMatrix from './pages/EisenhowerMatrix';
+import Tracker from './pages/Tracker';
+import Finance from './pages/Finance';
 
 function App() {
-  // Проверяем авторизацию пользователя
-  const isAuthenticated = localStorage.getItem('isAuthenticated') === 'true'
-  
   return (
-    <Router basename="/omnia-frontend">
-      <Routes>
-        {/* Публичные маршруты */}
-        <Route path="landing" element={<Landing />} />
-        <Route path="login" element={<Login />} />
-        
-        {/* Админ маршруты */}
-        <Route path="admin/login" element={<AdminLogin />} />
-        <Route path="admin" element={<AdminPanel />} />
-        
-        {/* Защищенные маршруты с Layout */}
-        <Route path="/" element={
-          <ProtectedRoute>
-            <Layout />
-          </ProtectedRoute>
-        }>
-          {/* Редирект с корня на ленту постов */}
-          <Route index element={<Navigate to="posts" replace />} />
-          
-          {/* Основные страницы */}
-          <Route path="dashboard" element={<Dashboard />} />
-          <Route path="desktop" element={<Desktop />} />
-          <Route path="knowledge-base" element={<KnowledgeBase />} />
-          <Route path="profile" element={<Profile />} />
-          <Route path="posts" element={<Posts />} />
-          
-          {/* Маршруты для событий */}
-          <Route path="events" element={<Events />} />
-          <Route path="events/:eventId" element={<Events />} />
-        </Route>
-        
-        {/* Редирект для всех остальных маршрутов */}
-        <Route path="*" element={
-          isAuthenticated ? <Navigate to="posts" replace /> : <Navigate to="login" replace />
-        } />
-      </Routes>
-    </Router>
-  )
+    <div className="app">
+      <Sidebar />
+      <main className="main-content">
+        <Routes>
+          <Route path="/" element={<Tasks />} />
+          <Route path="/eisenhower" element={<EisenhowerMatrix />} />
+          <Route path="/tracker" element={<Tracker />} />
+          <Route path="/english" element={<English />} />
+            <Route path="/finance" element={<Finance />} />
+        </Routes>
+      </main>
+    </div>
+  );
 }
 
-export default App
+export default App;

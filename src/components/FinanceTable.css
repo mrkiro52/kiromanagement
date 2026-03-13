@@ -1,0 +1,89 @@
+.finance-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.finance-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--color-bg-card);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.finance-table th, .finance-table td {
+  padding: 14px 12px;
+  text-align: left;
+  font-size: 14px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.finance-table th {
+  background: var(--color-selected-bg);
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.finance-table tr:last-child td {
+  border-bottom: none;
+}
+
+.type-pill {
+  display: inline-block;
+  width: 100px;
+  text-align: center;
+  padding: 6px 8px;
+  border-radius: 16px;
+  font-weight: 600;
+  font-size: 13px;
+  color: white;
+}
+.type-pill.income {
+  background: linear-gradient(90deg, #10B981 0%, #34D399 100%);
+}
+.type-pill.expense {
+  background: linear-gradient(90deg, #EF4444 0%, #F87171 100%);
+}
+
+.sum-pill {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 16px;
+  font-weight: 700;
+  font-size: 14px;
+  font-family: 'JetBrains Mono', monospace;
+}
+.sum-pill.income {
+  background: linear-gradient(90deg, #10B981 0%, #34D399 100%);
+  color: white;
+}
+.sum-pill.expense {
+  background: linear-gradient(90deg, #EF4444 0%, #F87171 100%);
+  color: white;
+}
+
+.empty-row {
+  text-align: center;
+  color: var(--color-text-secondary);
+  font-size: 15px;
+  padding: 32px 0;
+}
+
+@media (max-width: 768px) {
+  .finance-table th, .finance-table td {
+    padding: 10px 8px;
+    font-size: 12px;
+  }
+
+  .type-pill {
+    width: 80px;
+    font-size: 11px;
+    padding: 4px 6px;
+  }
+
+  .sum-pill {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+}

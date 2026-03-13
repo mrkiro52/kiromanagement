@@ -1,0 +1,137 @@
+.new-task-modal {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 20px 24px rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+  width: 100%;
+  max-height: 90vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  animation: modalSlideIn 0.3s ease-out;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.modal-header h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.modal-body {
+  padding: 24px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  margin-bottom: 8px;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 0 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  font-size: 14px;
+  color: var(--color-text-primary);
+  background: white;
+  transition: all 0.2s;
+}
+
+.form-input {
+  height: 36px;
+}
+
+.form-textarea {
+  padding: 12px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: var(--color-text-placeholder);
+}
+
+.priority-options {
+  display: flex;
+  gap: 12px;
+}
+
+.priority-option {
+  flex: 1;
+  cursor: pointer;
+}
+
+.priority-option input[type="radio"] {
+  display: none;
+}
+
+.priority-label {
+  display: block;
+  padding: 8px 12px;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  border: 2px solid var(--color-border);
+  transition: all 0.2s;
+}
+
+.priority-option input[type="radio"]:checked + .priority-label {
+  border-color: transparent;
+  color: white;
+}
+
+.priority-option input[type="radio"]:checked + .priority-label.priority-high {
+  background-color: var(--color-danger);
+}
+
+.priority-option input[type="radio"]:checked + .priority-label.priority-medium {
+  background-color: var(--color-warning);
+}
+
+.priority-option input[type="radio"]:checked + .priority-label.priority-low {
+  background-color: var(--color-success);
+}
+
+.priority-label:hover {
+  background-color: var(--color-hover-bg);
+}
+
+.priority-option input[type="radio"]:checked + .priority-label:hover {
+  opacity: 0.9;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid var(--color-border);
+}

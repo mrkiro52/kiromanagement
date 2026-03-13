@@ -1,0 +1,364 @@
+.finance-periods {
+  width: 100%;
+  margin-top: 32px;
+}
+
+.periods-filter {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 32px;
+}
+
+.filter-mode-buttons {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.mode-button {
+  flex: 1;
+  padding: 12px 16px;
+  border: 2px solid var(--color-border);
+  background: var(--color-bg-main);
+  color: var(--color-text-primary);
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.mode-button:hover {
+  border-color: #3B82F6;
+  color: #3B82F6;
+}
+
+.mode-button.active {
+  background: linear-gradient(135deg, #3B82F6 0%, #60A5FA 100%);
+  border-color: #3B82F6;
+  color: white;
+}
+
+.filter-inputs {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.date-display {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-bg-main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.date-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.date-separator {
+  color: var(--color-text-secondary);
+  font-weight: 600;
+  padding: 0 8px;
+}
+
+.btn-select-period {
+  padding: 10px 16px;
+  background: linear-gradient(135deg, #3B82F6 0%, #60A5FA 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.btn-select-period:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.periods-content {
+  display: flex;
+  gap: 32px;
+}
+
+.periods-list {
+  flex: 1;
+  min-width: 300px;
+}
+
+.periods-list h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0 0 20px 0;
+}
+
+.payments-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 12px;
+}
+
+.payment-pill {
+  padding: 16px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: white;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.payment-pill.income {
+  background: linear-gradient(135deg, #10B981 0%, #34D399 100%);
+}
+
+.payment-pill.expense {
+  background: linear-gradient(135deg, #EF4444 0%, #F87171 100%);
+}
+
+.payment-pill:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.payment-title {
+  font-size: 13px;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.payment-date {
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+.payment-amount {
+  font-size: 14px;
+  font-weight: 700;
+  font-family: 'JetBrains Mono', monospace;
+  margin-top: 4px;
+}
+
+.empty-message {
+  color: var(--color-text-secondary);
+  font-size: 14px;
+  text-align: center;
+  padding: 40px 20px;
+  margin: 0;
+}
+
+.periods-calendar {
+  width: 320px;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 12px;
+}
+
+.calendar-header h3 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  flex: 1;
+  text-align: center;
+}
+
+.calendar-nav {
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-main);
+  border-radius: 8px;
+  cursor: pointer;
+  color: var(--color-text-primary);
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calendar-nav:hover {
+  background: var(--color-selected-bg);
+  border-color: #3B82F6;
+  color: #3B82F6;
+}
+
+.calendar-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.calendar-weekdays div {
+  text-align: center;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-text-secondary);
+  padding: 6px 0;
+}
+
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.calendar-day-wrapper {
+  position: relative;
+  aspect-ratio: 1;
+}
+
+.calendar-day {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  background: var(--color-bg-main);
+  cursor: default;
+  transition: all 0.2s;
+}
+
+.calendar-day.empty {
+  background: transparent;
+  cursor: default;
+}
+
+.calendar-day.has-data {
+  background: linear-gradient(135deg, #3B82F6 0%, #60A5FA 100%);
+  color: white;
+  cursor: pointer;
+}
+
+.calendar-day.has-data:hover {
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+}
+
+.day-tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: 'JetBrains Mono', monospace;
+  margin-bottom: 8px;
+  z-index: 10;
+  pointer-events: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.day-tooltip.positive {
+  background: linear-gradient(135deg, #10B981 0%, #34D399 100%);
+  color: white;
+}
+
+.day-tooltip.negative {
+  background: linear-gradient(135deg, #EF4444 0%, #F87171 100%);
+  color: white;
+}
+
+@media (max-width: 1024px) {
+  .periods-content {
+    flex-direction: column;
+  }
+
+  .periods-calendar {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .finance-periods {
+    margin-top: 16px;
+  }
+
+  .periods-filter {
+    padding: 14px;
+    margin-bottom: 16px;
+  }
+
+  .filter-mode-buttons {
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+
+  .mode-button {
+    font-size: 13px;
+    padding: 10px 10px;
+  }
+
+  .filter-inputs {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .date-display {
+    flex: 1;
+    min-width: 100px;
+  }
+
+  .btn-select-period {
+    width: 100%;
+  }
+
+  .payments-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 8px;
+  }
+
+  .payment-pill {
+    padding: 12px;
+  }
+
+  .periods-calendar {
+    padding: 14px;
+  }
+}
