@@ -2,13 +2,16 @@
   display: grid;
   grid-template-columns: 240px 1fr;
   height: 100vh;
+  height: 100dvh;
   width: 100%;
-  overflow: hidden;
 }
 
 .main-content {
   height: 100vh;
+  height: 100dvh;
   overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
   background-color: var(--color-bg-main);
 }
 
