@@ -78,6 +78,45 @@
   gap: 8px;
 }
 
+@media (max-width: 768px) {
+  .finance-modal {
+    padding: 20px 16px;
+    gap: 14px;
+    border-radius: 12px;
+  }
+
+  .modal-body {
+    gap: 10px;
+  }
+
+  .form-group {
+    gap: 4px;
+  }
+
+  .form-group label {
+    font-size: 13px;
+  }
+
+  input, textarea {
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+
+  .modal-header h2 {
+    font-size: 17px;
+  }
+
+  .type-switch button {
+    padding: 8px 0;
+    font-size: 13px;
+  }
+
+  .btn-submit {
+    padding: 10px;
+    font-size: 13px;
+  }
+}
+
 .form-group label {
   font-weight: 600;
   font-size: 14px;

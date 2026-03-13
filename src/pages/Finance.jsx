@@ -43,6 +43,12 @@ const Finance = () => {
     localStorage.setItem('financePotentialItems', JSON.stringify(newItems));
   };
 
+  const handleDelete = (index) => {
+    const newItems = items.filter((_, i) => i !== index);
+    setItems(newItems);
+    localStorage.setItem('financeItems', JSON.stringify(newItems));
+  };
+
   return (
     <div className="finance-page">
       <div className="finance-header">
@@ -59,7 +65,7 @@ const Finance = () => {
         <button className={tab === 'periods' ? 'active' : ''} onClick={() => setTab('periods')}>Периоды</button>
       </div>
       {tab === 'table' ? (
-        <FinanceTable items={items} />
+        <FinanceTable items={items} onDelete={handleDelete} />
       ) : tab === 'stats' ? (
         <FinanceStats items={items} potentialItems={potentialItems} onAddPotential={() => setShowPotentialModal(true)} onDeletePotential={handleDeletePotential} />
       ) : (
