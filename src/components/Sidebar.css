@@ -76,11 +76,11 @@
 
 /* ===== OVERLAY ===== */
 .sidebar-overlay {
-  display: none;
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.45);
   z-index: 299;
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* ===== SIDEBAR ===== */
@@ -91,6 +91,7 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
+  height: 100dvh;
   flex-shrink: 0;
 }
 
@@ -167,22 +168,23 @@
     display: flex;
   }
 
-  .sidebar-overlay {
-    display: block;
-  }
-
   .sidebar {
     position: fixed;
     top: 0;
-    left: -240px;
+    left: 0;
     height: 100vh;
+    height: 100dvh;
+    height: -webkit-fill-available;
     z-index: 300;
+    transform: translateX(-240px);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: none;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   .sidebar.sidebar-mobile-open {
-    transform: translateX(240px);
+    transform: translateX(0);
     box-shadow: 4px 0 24px rgba(0, 0, 0, 0.15);
   }
 }

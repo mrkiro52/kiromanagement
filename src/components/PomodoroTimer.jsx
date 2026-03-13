@@ -14,8 +14,8 @@ const PomodoroTimer = () => {
       }, 1000);
     } else if (timeLeft === 0 && isRunning) {
       setIsRunning(false);
-      // Браузерное уведомление
-      if (Notification.permission === 'granted') {
+      // Браузерное уведомление (только если поддерживается)
+      if (typeof Notification !== 'undefined' && Notification.permission === 'granted') {
         new Notification('Pomodoro завершён!', {
           body: '25 минут истекли. Пора отдохнуть!',
         });
@@ -26,7 +26,7 @@ const PomodoroTimer = () => {
   }, [isRunning, timeLeft]);
 
   useEffect(() => {
-    if (Notification.permission === 'default') {
+    if (typeof Notification !== 'undefined' && Notification.permission === 'default') {
       Notification.requestPermission();
     }
   }, []);
